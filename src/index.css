@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	html { scroll-behavior: smooth; }
+	body {
+		@apply bg-black text-white;
+		background-color: #000000;
+		color: #ffffff;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+}
+
+/* Font helpers */
+.font-syne { font-family: 'Syne', system-ui, -apple-system, sans-serif; }
+.font-ibm { font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace; }
+
+/* Neon glow utility */
+.neon-glow {
+	/* subtle white glow for monochrome theme */
+	box-shadow: 0 8px 24px rgba(255,255,255,0.04), 0 0 32px rgba(255,255,255,0.02);
+}
+
+/* Subtle white focus ring */
+.focus-cyan:focus { outline: 2px solid rgba(255,255,255,0.08); outline-offset: 3px }
+
+/* Glass surface for cards and panels */
+.glass {
+	background: rgba(255,255,255,0.02);
+	/* remove visible border for cleaner look */
+	border: none;
+	backdrop-filter: blur(6px);
+	box-shadow: 0 6px 18px rgba(2,6,23,0.6);
+}
+
+.muted { color: #9aa6b2 }
