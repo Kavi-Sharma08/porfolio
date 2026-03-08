@@ -9,7 +9,7 @@ const projects = [
     tags: ['React', 'Node.js', 'Express', 'MongoDB', 'Razorpay'],
     github: '',
     live: 'https://bagspackgo.vercel.app/',
-    image: '/assets/bagspackgo.png',
+    image: 'https://res.cloudinary.com/dgndczptk/image/upload/v1772976443/portfolio_bags_ogp5tx.png',
   },
   {
     id: 'justshare',
@@ -19,7 +19,7 @@ const projects = [
     tags: ['Next.js', 'TypeScript', 'MongoDB', 'Redux'],
     github: '',
     live: 'https://rent-project-gray.vercel.app/',
-    image: '/assets/justshare.png',
+    image: 'https://res.cloudinary.com/dgndczptk/image/upload/v1772976430/portfolio_Rent_l6an0g.png',
   }
 ]
 
