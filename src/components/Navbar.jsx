@@ -20,7 +20,7 @@ export default function Navbar() {
             {links.map(l => (
               <a key={l.href} href={l.href} className="text-sm text-slate-200 hover:text-white/90 transition">{l.label}</a>
             ))}
-            <a href="https://drive.google.com/file/d/1AMS6atReIPT9wJgec3Tfjodu1UzGiWF8/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="ml-4 px-3 py-1 rounded-md bg-white/10 text-white border border-white/10 hover:brightness-105">Resume</a>
+            <a href="https://drive.google.com/file/d/1N7xUg0Nj64QTGh2emir2b-YJeyo_5Hyu/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="ml-4 px-3 py-1 rounded-md bg-white/10 text-white border border-white/10 hover:brightness-105">Resume</a>
           </div>
           <button className="md:hidden p-2 rounded-md bg-white/5" onClick={() => setOpen(v => !v)} aria-label="menu">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h16" stroke="#9be8ff" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/></svg>
