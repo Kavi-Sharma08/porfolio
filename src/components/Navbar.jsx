@@ -34,7 +34,7 @@ export default function Navbar() {
             {links.map(l => (
               <a key={l.href} href={l.href} onClick={() => setOpen(false)} className="block text-white/90">{l.label}</a>
             ))}
-            <a href="https://drive.google.com/file/d/1AMS6atReIPT9wJgec3Tfjodu1UzGiWF8/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="block text-white">View Resume</a>
+            <a href="https://drive.google.com/file/d/1N7xUg0Nj64QTGh2emir2b-YJeyo_5Hyu/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="block text-white">View Resume</a>
           </div>
         </div>
       )}
