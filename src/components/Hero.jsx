@@ -17,7 +17,7 @@ export default function Hero() {
 
           <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ delay: 0.35 }} className="mt-8 flex items-center justify-center gap-4">
             <a href="#projects" className="px-6 py-3 rounded-md bg-white text-black font-semibold">View Projects</a>
-            <a href="https://drive.google.com/file/d/1AMS6atReIPT9wJgec3Tfjodu1UzGiWF8/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="px-6 py-3 rounded-md border border-white/10 text-white">View Resume</a>
+            <a href="https://drive.google.com/file/d/1N7xUg0Nj64QTGh2emir2b-YJeyo_5Hyu/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="px-6 py-3 rounded-md border border-white/10 text-white">View Resume</a>
           </motion.div>
 
           <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ delay: 0.5 }} className="mt-8 text-slate-300">
