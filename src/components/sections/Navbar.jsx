@@ -2,10 +2,12 @@ import { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { navLinks, profile } from '../../data/content'
 import Icon from '../ui/Icon'
+import { toggleTheme, useTheme } from '../../theme'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
+  const theme = useTheme()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24)
@@ -22,7 +24,7 @@ export default function Navbar() {
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         aria-label="Primary"
         className={`mx-auto mt-4 flex max-w-6xl items-center justify-between gap-4 rounded-full border px-4 py-2.5 transition-all duration-300 ${
-          scrolled ? 'border-white/10 bg-[#0a0a0d]/80 shadow-soft backdrop-blur-xl' : 'border-transparent'
+          scrolled ? 'border-white/10 bg-panel/80 shadow-soft backdrop-blur-xl' : 'border-transparent'
         }`}
       >
         <a href="#home" className="pl-2 font-display text-[15px] font-semibold tracking-tight text-white">
@@ -42,6 +44,24 @@ export default function Navbar() {
         </div>
 
         <div className="flex items-center gap-2">
+          <button
+            onClick={toggleTheme}
+            aria-label={theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'}
+            className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-white/80 transition-colors hover:text-white"
+          >
+            <AnimatePresence mode="wait" initial={false}>
+              <motion.span
+                key={theme}
+                initial={{ rotate: -90, opacity: 0, scale: 0.6 }}
+                animate={{ rotate: 0, opacity: 1, scale: 1 }}
+                exit={{ rotate: 90, opacity: 0, scale: 0.6 }}
+                transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                className="inline-flex"
+              >
+                <Icon name={theme === 'dark' ? 'moon' : 'sun'} size={16} />
+              </motion.span>
+            </AnimatePresence>
+          </button>
           <a
             href={profile.resume}
             target="_blank"
@@ -67,7 +87,7 @@ export default function Navbar() {
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
-            className="mx-auto mt-2 max-w-6xl rounded-2xl border border-white/10 bg-[#0a0a0d]/95 p-2 backdrop-blur-xl lg:hidden"
+            className="mx-auto mt-2 max-w-6xl rounded-2xl border border-white/10 bg-panel/95 p-2 backdrop-blur-xl lg:hidden"
           >
             {navLinks.map((l) => (
               <a

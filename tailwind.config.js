@@ -4,13 +4,15 @@ export default {
   theme: {
     extend: {
       colors: {
-        ink: '#050506',
-        panel: '#0b0b0e',
-        line: 'rgba(255,255,255,0.08)',
+        white: 'rgb(var(--white-rgb) / <alpha-value>)',
+        black: 'rgb(var(--black-rgb) / <alpha-value>)',
+        ink: 'rgb(var(--background-rgb) / <alpha-value>)',
+        panel: 'rgb(var(--surface-rgb) / <alpha-value>)',
+        line: 'rgb(var(--border-rgb) / 0.08)',
         accent: {
-          DEFAULT: '#8b8bf8',
-          soft: '#a9a9ff',
-          dim: '#4a4a7a',
+          DEFAULT: 'rgb(var(--accent-rgb) / <alpha-value>)',
+          soft: 'rgb(var(--accent-soft-rgb) / <alpha-value>)',
+          dim: 'rgb(var(--accent-dim-rgb) / <alpha-value>)',
         },
       },
       fontFamily: {
@@ -19,9 +21,9 @@ export default {
         mono: ['"JetBrains Mono"', 'ui-monospace', 'SFMono-Regular', 'monospace'],
       },
       boxShadow: {
-        soft: '0 24px 70px -24px rgba(0,0,0,0.75)',
-        card: '0 1px 0 rgba(255,255,255,0.04) inset, 0 24px 60px -24px rgba(0,0,0,0.7)',
-        glow: '0 0 90px -24px rgba(139,139,248,0.4)',
+        soft: '0 24px 70px -24px var(--shadow)',
+        card: '0 1px 0 var(--card-inset) inset, 0 24px 60px -24px var(--shadow)',
+        glow: '0 0 90px -24px var(--glow)',
       },
       keyframes: {
         floaty: {

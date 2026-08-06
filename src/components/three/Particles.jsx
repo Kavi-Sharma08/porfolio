@@ -1,5 +1,6 @@
 import { useMemo, useRef } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
+import { useTheme } from '../../theme'
 
 function mulberry32(a) {
   return function () {
@@ -13,6 +14,7 @@ function mulberry32(a) {
 
 function Field({ count }) {
   const ref = useRef()
+  const theme = useTheme()
   const positions = useMemo(() => {
     const rand = mulberry32(1234)
     const arr = new Float32Array(count * 3)
@@ -34,7 +36,7 @@ function Field({ count }) {
       <bufferGeometry>
         <bufferAttribute attach="attributes-position" array={positions} count={count} itemSize={3} />
       </bufferGeometry>
-      <pointsMaterial size={0.035} color="#ffffff" transparent opacity={0.4} sizeAttenuation depthWrite={false} />
+      <pointsMaterial size={0.035} color={theme === 'dark' ? '#ffffff' : '#10101a'} transparent opacity={0.4} sizeAttenuation depthWrite={false} />
     </points>
   )
 }

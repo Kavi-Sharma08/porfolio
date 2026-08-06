@@ -2,6 +2,30 @@ import { useRef } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { Html, Line, OrbitControls } from '@react-three/drei'
 import { architecture } from '../../data/content'
+import { useTheme } from '../../theme'
+
+const PALETTES = {
+  dark: {
+    node: '#17171d',
+    selected: '#a9a9ff',
+    emissive: '#4a4a7a',
+    emissiveSelected: '#8b8bf8',
+    emissiveIdle: 0.25,
+    emissiveSelectedIntensity: 0.9,
+    lineColor: '#8b8bf8',
+    lineOpacity: 0.22,
+  },
+  light: {
+    node: '#ffffff',
+    selected: '#8b8bf8',
+    emissive: '#8b8bf8',
+    emissiveSelected: '#6d6def',
+    emissiveIdle: 0.35,
+    emissiveSelectedIntensity: 0.55,
+    lineColor: '#6d6def',
+    lineOpacity: 0.5,
+  },
+}
 
 const POS = {
   browser: [-2.6, 0.2, 0],
@@ -11,7 +35,7 @@ const POS = {
   database: [2.6, 0.2, 0],
 }
 
-function Node({ layer, position, selected, onSelect, onOver, onOut }) {
+function Node({ layer, position, selected, onSelect, onOver, onOut, p }) {
   const ref = useRef()
   useFrame(() => {
     if (!ref.current) return
@@ -31,9 +55,9 @@ function Node({ layer, position, selected, onSelect, onOver, onOut }) {
       >
         <sphereGeometry args={[0.24, 32, 32]} />
         <meshStandardMaterial
-          color={selected ? '#a9a9ff' : '#17171d'}
-          emissive={selected ? '#8b8bf8' : '#4a4a7a'}
-          emissiveIntensity={selected ? 0.9 : 0.25}
+          color={selected ? p.selected : p.node}
+          emissive={selected ? p.emissiveSelected : p.emissive}
+          emissiveIntensity={selected ? p.emissiveSelectedIntensity : p.emissiveIdle}
           metalness={0.3}
           roughness={0.3}
         />
@@ -47,7 +71,7 @@ function Node({ layer, position, selected, onSelect, onOver, onOut }) {
   )
 }
 
-function Flow() {
+function Flow({ p }) {
   const group = useRef()
   const keys = architecture.map((a) => a.key)
   const lines = []
@@ -61,13 +85,15 @@ function Flow() {
   return (
     <group ref={group}>
       {lines.map((pts, i) => (
-        <Line key={i} points={pts} color="#8b8bf8" transparent opacity={0.22} lineWidth={1.2} />
+        <Line key={i} points={pts} color={p.lineColor} transparent opacity={p.lineOpacity} lineWidth={1.2} />
       ))}
     </group>
   )
 }
 
 export default function ArchitectureScene({ selected, onSelect }) {
+  const theme = useTheme()
+  const p = PALETTES[theme]
   const handleOver = () => {
     document.body.style.cursor = 'pointer'
   }
@@ -84,7 +110,7 @@ export default function ArchitectureScene({ selected, onSelect }) {
       <directionalLight position={[3, 5, 4]} intensity={1} />
       <pointLight position={[0, 2, 2]} intensity={0.6} color="#8b8bf8" />
 
-      <Flow />
+      <Flow p={p} />
       {architecture.map((layer) => (
         <Node
           key={layer.key}
@@ -94,6 +120,7 @@ export default function ArchitectureScene({ selected, onSelect }) {
           onSelect={onSelect}
           onOver={handleOver}
           onOut={handleOut}
+          p={p}
         />
       ))}
 

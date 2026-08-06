@@ -2,8 +2,26 @@ import { useRef, useState } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { Html, OrbitControls } from '@react-three/drei'
 import { galaxyTech } from '../../data/content'
+import { useTheme } from '../../theme'
 
-function TechNode({ tech, hovered, setHovered }) {
+const PALETTES = {
+  dark: {
+    idle: '#d6d6dc',
+    active: '#a9a9ff',
+    emissive: '#8b8bf8',
+    ring: '#ffffff',
+    ringOpacity: 0.12,
+  },
+  light: {
+    idle: '#5a5a66',
+    active: '#8b8bf8',
+    emissive: '#6d6def',
+    ring: '#10101a',
+    ringOpacity: 0.1,
+  },
+}
+
+function TechNode({ tech, hovered, setHovered, p }) {
   const ref = useRef()
   const active = hovered === tech.key
 
@@ -38,14 +56,14 @@ function TechNode({ tech, hovered, setHovered }) {
       >
         <sphereGeometry args={[0.09, 20, 20]} />
         <meshStandardMaterial
-          color={active ? '#a9a9ff' : '#d6d6dc'}
-          emissive={active ? '#8b8bf8' : '#000000'}
+          color={active ? p.active : p.idle}
+          emissive={active ? p.emissive : '#000000'}
           emissiveIntensity={active ? 0.9 : 0}
         />
       </mesh>
       {active && (
         <Html center position={[0, 0.3, 0]} zIndexRange={[30, 0]} style={{ pointerEvents: 'none' }}>
-          <div className="rounded-xl border border-white/10 bg-[#0c0c11]/95 px-4 py-3 text-center shadow-soft backdrop-blur">
+          <div className="rounded-xl border border-white/10 bg-panel/95 px-4 py-3 text-center shadow-soft backdrop-blur">
             <div className="font-display text-sm font-semibold text-white">{tech.name}</div>
             <div className="mt-0.5 font-mono text-[10px] text-white/45">{tech.note}</div>
           </div>
@@ -60,6 +78,7 @@ function Galaxy() {
   const inner = useRef()
   const outer = useRef()
   const [hovered, setHovered] = useState(null)
+  const p = PALETTES[useTheme()]
 
   useFrame((state) => {
     const t = state.clock.elapsedTime
@@ -85,11 +104,11 @@ function Galaxy() {
 
       <mesh ref={ring} rotation={[Math.PI / 2.4, 0, 0]}>
         <torusGeometry args={[1.75, 0.008, 16, 128]} />
-        <meshBasicMaterial color="#ffffff" transparent opacity={0.12} />
+        <meshBasicMaterial color={p.ring} transparent opacity={p.ringOpacity} />
       </mesh>
 
       {galaxyTech.map((tech) => (
-        <TechNode key={tech.key} tech={tech} hovered={hovered} setHovered={setHovered} />
+        <TechNode key={tech.key} tech={tech} hovered={hovered} setHovered={setHovered} p={p} />
       ))}
 
       <OrbitControls

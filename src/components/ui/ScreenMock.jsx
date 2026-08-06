@@ -119,7 +119,7 @@ function Rent({ accent }) {
 
 export default function ScreenMock({ variant = 'clinic', accent = '#8b8bf8', className = '' }) {
   return (
-    <div className={`overflow-hidden rounded-2xl border border-white/10 bg-[#0c0c11] ${className}`}>
+    <div className={`overflow-hidden rounded-2xl border border-white/10 bg-panel ${className}`}>
       <div className="flex items-center gap-2 border-b border-white/[0.06] bg-white/[0.02] px-4 py-2.5">
         <span className="h-2.5 w-2.5 rounded-full bg-white/15" />
         <span className="h-2.5 w-2.5 rounded-full bg-white/15" />

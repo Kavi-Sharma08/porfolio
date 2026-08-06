@@ -145,7 +145,7 @@ function CaseStudy({ project, onClose }) {
           animate={{ y: 0, opacity: 1, scale: 1 }}
           exit={{ y: 20, opacity: 0 }}
           transition={{ type: 'spring', damping: 26, stiffness: 300 }}
-          className="overflow-hidden rounded-3xl border border-white/10 bg-[#0b0b0e] shadow-soft"
+          className="overflow-hidden rounded-3xl border border-white/10 bg-panel shadow-soft"
         >
           <div className="relative border-b border-white/5 bg-gradient-to-b from-white/[0.03] to-transparent p-5 sm:p-7">
             <ScreenMock variant={project.mock} accent={project.accent} />
