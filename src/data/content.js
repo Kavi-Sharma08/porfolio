@@ -18,7 +18,6 @@ export const profile = {
 export const navLinks = [
   { href: '#journey', label: 'Journey' },
   { href: '#projects', label: 'Projects' },
-  { href: '#architecture', label: 'Architecture' },
   { href: '#skills', label: 'Skills' },
   { href: '#experience', label: 'Experience' },
   { href: '#contact', label: 'Contact' },
