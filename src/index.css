@@ -3,36 +3,52 @@
 @tailwind utilities;
 
 @layer base {
-	html { scroll-behavior: smooth; }
-	body {
-		@apply bg-black text-white;
-		background-color: #000000;
-		color: #ffffff;
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
-	}
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-ink font-sans text-white antialiased;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  ::selection {
+    background: rgba(139, 139, 248, 0.35);
+    color: #ffffff;
+  }
+  section[id] {
+    scroll-margin-top: 84px;
+  }
+  :focus-visible {
+    outline: 2px solid rgba(139, 139, 248, 0.7);
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #07070a;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #26262e;
+    border-radius: 999px;
+    border: 2px solid #07070a;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #3a3a44;
+  }
 }
 
-/* Font helpers */
-.font-syne { font-family: 'Syne', system-ui, -apple-system, sans-serif; }
-.font-ibm { font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace; }
-
-/* Neon glow utility */
-.neon-glow {
-	/* subtle white glow for monochrome theme */
-	box-shadow: 0 8px 24px rgba(255,255,255,0.04), 0 0 32px rgba(255,255,255,0.02);
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-br from-white via-white to-white/40 bg-clip-text text-transparent;
+  }
+  .card-surface {
+    @apply rounded-3xl border border-white/[0.06] bg-white/[0.02];
+  }
+  .glass {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(14px);
+  }
 }
-
-/* Subtle white focus ring */
-.focus-cyan:focus { outline: 2px solid rgba(255,255,255,0.08); outline-offset: 3px }
-
-/* Glass surface for cards and panels */
-.glass {
-	background: rgba(255,255,255,0.02);
-	/* remove visible border for cleaner look */
-	border: none;
-	backdrop-filter: blur(6px);
-	box-shadow: 0 6px 18px rgba(2,6,23,0.6);
-}
-
-.muted { color: #9aa6b2 }

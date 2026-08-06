@@ -1,39 +1,32 @@
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import About from './components/About'
-import Experience from './components/Experience'
-import Skills from './components/Skills'
-import Projects from './components/Projects'
-import Contact from './components/Contact'
-import Footer from './components/Footer'
+import Navbar from './components/sections/Navbar'
+import Hero from './components/sections/Hero'
+import Stats from './components/sections/Stats'
+import Timeline from './components/sections/Timeline'
+import Projects from './components/sections/Projects'
+import Architecture from './components/sections/Architecture'
+import Skills from './components/sections/Skills'
+import Experience from './components/sections/Experience'
+import Achievements from './components/sections/Achievements'
+import Resume from './components/sections/Resume'
+import Contact from './components/sections/Contact'
+import Footer from './components/sections/Footer'
 
-const App = () => {
+export default function App() {
   return (
-    <div className="min-h-screen font-syne bg-[#0a0a0f]">
+    <div className="min-h-screen bg-ink text-white">
       <Navbar />
-      <main className="pt-20">
-        <section id="hero">
-          <Hero />
-        </section>
-        <section id="about">
-          <About />
-        </section>
-        <section id="experience">
-          <Experience />
-        </section>
-        <section id="skills">
-          <Skills />
-        </section>
-        <section id="projects">
-          <Projects />
-        </section>
-        <section id="contact">
-          <Contact />
-        </section>
+      <main>
+        <Hero />
+        <Stats />
+        <Timeline />
+        <Projects />
+        <Skills />
+        <Experience />
+        <Achievements />
+        <Resume />
+        <Contact />
       </main>
       <Footer />
     </div>
   )
 }
-
-export default App
