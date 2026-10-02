@@ -9,7 +9,7 @@ export const profile = {
   email: 'kavi.workspaceofficial@gmail.com',
   phone: '+91 7827428895',
   resume:
-    'https://drive.google.com/file/d/1n_YFShAHIXNQykbHbBVRsCwHvfjskdUK/view?usp=sharing',
+    'https://drive.google.com/file/d/1AVjXYwQXFh46UxK_muJ_cipqoYHUiM8K/view?usp=sharing',
   github: 'https://github.com/Kavi-Sharma08',
   githubUser: 'Kavi-Sharma08',
   linkedin: 'https://www.linkedin.com/in/kavi-sharma-29b487284',
