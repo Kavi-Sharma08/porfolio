@@ -91,6 +91,50 @@ function Survey({ accent }) {
   )
 }
 
+function Invoice({ accent }) {
+  return (
+    <div className="space-y-2.5">
+      <div className="flex items-center justify-between border-b border-white/[0.06] pb-2">
+        <div className="space-y-1">
+          <div className="h-2 w-16 rounded bg-white/20" />
+          <div className="h-1.5 w-24 rounded bg-white/10" />
+        </div>
+        <div className="rounded px-2 py-0.5 font-mono text-[9px]" style={{ background: `${accent}22`, color: accent }}>
+          TAX INVOICE
+        </div>
+      </div>
+      <div className="grid grid-cols-2 gap-2 rounded-lg border border-white/[0.06] bg-white/[0.02] p-2">
+        <div className="space-y-1">
+          <div className="h-1.5 w-12 rounded bg-white/10" />
+          <div className="h-1.5 w-20 rounded bg-white/5" />
+        </div>
+        <div className="space-y-1 text-right">
+          <div className="ml-auto h-1.5 w-10 rounded bg-white/10" />
+          <div className="ml-auto h-1.5 w-16 rounded bg-white/5" />
+        </div>
+      </div>
+      <div className="space-y-1 rounded-lg border border-white/[0.06] bg-white/[0.02] p-2">
+        <div className="flex justify-between border-b border-white/5 pb-1">
+          <div className="h-1.5 w-16 rounded bg-white/15" />
+          <div className="h-1.5 w-10 rounded bg-white/15" />
+        </div>
+        <div className="flex justify-between py-0.5">
+          <div className="h-1.5 w-20 rounded bg-white/10" />
+          <div className="h-1.5 w-8 rounded bg-white/10" />
+        </div>
+        <div className="flex justify-between py-0.5">
+          <div className="h-1.5 w-14 rounded bg-white/10" />
+          <div className="h-1.5 w-8 rounded bg-white/10" />
+        </div>
+      </div>
+      <div className="flex items-center justify-between pt-1">
+        <span className="font-mono text-[10px] text-white/40">CGST + SGST</span>
+        <div className="h-2.5 w-14 rounded" style={{ background: accent }} />
+      </div>
+    </div>
+  )
+}
+
 function Rent({ accent }) {
   return (
     <div className="space-y-3">
@@ -131,6 +175,7 @@ export default function ScreenMock({ variant = 'clinic', accent = '#8b8bf8', cla
       </div>
       <div className="p-4">
         {variant === 'clinic' && <Clinic accent={accent} />}
+        {(variant === 'billgst' || variant === 'invoice') && <Invoice accent={accent} />}
         {variant === 'survey' && <Survey accent={accent} />}
         {variant === 'rent' && <Rent accent={accent} />}
       </div>

@@ -48,15 +48,17 @@ function ProjectCard({ project, onOpen, className = '' }) {
               Live demo <Icon name="external" size={12} />
             </a>
           )}
-          <a
-            href={project.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={(e) => e.stopPropagation()}
-            className="inline-flex items-center gap-1.5 rounded-full border border-white/15 px-4 py-2 text-xs font-medium text-white transition hover:bg-white/5"
-          >
-            <Icon name="github" size={13} /> GitHub
-          </a>
+          {project.github && (
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="inline-flex items-center gap-1.5 rounded-full border border-white/15 px-4 py-2 text-xs font-medium text-white transition hover:bg-white/5"
+            >
+              <Icon name="github" size={13} /> GitHub
+            </a>
+          )}
           <button
             onClick={(e) => {
               e.stopPropagation()
@@ -87,7 +89,7 @@ function GitHubTile({ className = '' }) {
           Explore more on <span className="text-accent">GitHub</span>
         </h3>
         <p className="mt-3 max-w-sm text-sm leading-relaxed text-white/55">
-          Everything public — experiments, tools and the products above. Starred, committed, shipped.
+          Everything public — experiments, tools and the projects above. Starred, committed, shipped.
         </p>
       </div>
       <div className="mt-8 inline-flex items-center gap-2 font-mono text-sm text-white/70 transition group-hover:text-white">
@@ -221,14 +223,16 @@ function CaseStudy({ project, onClose }) {
                   View live demo <Icon name="external" size={13} />
                 </a>
               )}
-              <a
-                href={project.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border border-white/15 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-white/5"
-              >
-                <Icon name="github" size={14} /> View on GitHub
-              </a>
+              {project.github && (
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full border border-white/15 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-white/5"
+                >
+                  <Icon name="github" size={14} /> View on GitHub
+                </a>
+              )}
             </div>
           </div>
         </motion.div>
@@ -246,12 +250,12 @@ export default function Projects() {
         <SectionHeading
           index="02"
           eyebrow="Projects"
-          title="Products, not exercises."
-          description="Every project below went from problem to production. Click any card for the full case study."
+          title="Projects."
+          description="Key web applications built with full-stack and local-first architectures. Click any card for the full case study."
         />
 
-        <div className="mt-16 grid gap-4 lg:grid-cols-3">
-          <ProjectCard project={projects[0]} onOpen={setActive} className="lg:col-span-2" />
+        <div className="mt-16 grid gap-6 md:grid-cols-2">
+          <ProjectCard project={projects[0]} onOpen={setActive} />
           <ProjectCard project={projects[1]} onOpen={setActive} />
         </div>
       </div>

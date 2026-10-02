@@ -3,7 +3,7 @@ export const profile = {
   firstName: 'Kavi',
   title: 'Full Stack Software Engineer',
   tagline:
-    'Building scalable web applications, backend systems, and real-world software products.',
+    'Building scalable web applications, backend systems, and real-world software projects.',
   location: 'India',
   available: true,
   email: 'kavi.workspaceofficial@gmail.com',
@@ -24,8 +24,7 @@ export const navLinks = [
 ]
 
 export const stats = [
-  { value: 9.1, decimals: 1, label: 'CGPA' },
-  { value: 320, suffix: '+', label: 'LeetCode Problems' },
+  { value: 350, suffix: '+', label: 'Coding Problems' },
   { value: 1, label: 'Internship' },
   { text: 'Software Engineer', label: 'Full Stack Developer' },
 ]
@@ -52,9 +51,9 @@ export const timeline = [
     year: "2026",
     entries: [
       {
-        tag: "Flagship Project",
+        tag: "Featured Project",
         title: "Built ClinicFlow",
-        desc: "Designed and developed a scalable SaaS clinic management platform with secure authentication, appointment scheduling, and queue management.",
+        desc: "Designed and developed a full-stack clinic management platform with secure authentication, appointment scheduling, and live queue management.",
         tech: [
           "React",
           "TypeScript",
@@ -63,31 +62,19 @@ export const timeline = [
           "Prisma",
         ],
         detail: [
-          "Session-based authentication",
+          "Role-based access & secure authentication",
           "Queue & appointment management",
-          "Reusable dashboard architecture",
+          "Reusable React architecture with TanStack Query",
         ],
       },
 
       {
-        tag: "Achievement",
-        title: "320+ LeetCode Problems",
-        desc: "Consistently strengthened problem-solving and algorithmic thinking through competitive programming.",
+        tag: "Coding Practice",
+        title: "350+ Coding Problems",
+        desc: "Consistently strengthened problem-solving and algorithmic thinking through competitive programming on LeetCode.",
         tech: ["DSA", "Algorithms", "C++"],
         detail: [
-          "320+ problems solved",
-        ],
-      },
-
-      {
-        tag: "Hackathon",
-        title: "Smart India Hackathon",
-        desc: "Selected twice in the internal Smart India Hackathon, finishing among the Top 45 teams out of approximately 150.",
-        tech: ["Problem Solving", "Teamwork"],
-        detail: [
-          "2× Internal SIH Selection",
-          "Top 45 Teams",
-          "Collaborative product development",
+          "350+ problems solved",
         ],
       },
 
@@ -109,7 +96,7 @@ export const timeline = [
         desc: "Currently focused on building scalable full-stack applications and preparing for Software Engineer opportunities.",
         tech: ["React", "Node.js", "TypeScript" , "NextJs" , "Docker"],
         detail: [
-          "Building production-grade application",
+          "Building scalable web applications",
           "Open to Full-Time Opportunities",
         ],
       },
@@ -121,78 +108,79 @@ export const projects = [
   {
     id: 'clinicflow',
     name: 'ClinicFlow',
-    category: 'SaaS · Healthcare',
-    tagline: 'A full-stack SaaS clinic management platform.',
+    category: 'Full Stack · Healthcare',
+    tagline: 'A full-stack clinic management platform supporting Admin, Doctor, and Patient workflows.',
     description:
-      'A full-stack SaaS clinic management platform designed to streamline clinic operations through centralized management of doctors, patients, appointments, and queue scheduling.',
+      'Built a full-stack clinic management platform supporting Admin, Doctor, and Patient workflows, including doctor management, patient registration, appointment booking, availability, and live queue management. Developed REST APIs using Node.js/Express.js with PostgreSQL and Prisma, implementing role-based access and secure authentication for protected application workflows. Used TanStack Query for server-state management and caching, and built reusable React components for a responsive and scalable frontend.',
     problem:
-      'Clinics juggle doctors, patients, appointments and walk-ins across scattered spreadsheets and tools. Queue state gets lost, staff waste time, and the front desk becomes the bottleneck.',
+      'Clinics juggle doctors, patients, appointments, and walk-ins across scattered tools and manual workflows. Queue state gets lost, staff lose time, and the front desk becomes an operational bottleneck.',
     solution:
-      'A single platform where the entire clinic runs: schedules, queues, patient records and an analytics dashboard — with session authentication that keeps every role in its lane.',
+      'A centralized platform streamlining clinic operations: schedules, live queues, patient records, and doctor availability with role-based access control and secure authentication.',
     challenges: [
-      'Keeping queue state consistent across concurrent users',
-      'Session security that never compromises the dashboard UX',
-      'Reporting that scales to thousands of visits',
-      'Designing a reusable, layered feature architecture',
+      'Role-based access control and session authentication across multiple user roles',
+      'Maintaining consistent live queue states and appointment bookings',
+      'Optimizing server-state caching and invalidation using TanStack Query',
+      'Designing a reusable, modular component architecture for clinic dashboards',
     ],
     architecture: [
-      'React + TypeScript frontend with TanStack Query caching',
-      'Express REST API with role-based middleware',
-      'PostgreSQL schema modelling doctors, patients, appointments and queues',
-      'Session-based authentication with rotating session identity',
+      'React + TypeScript frontend with TanStack Query caching and server-state sync',
+      'Express REST API with role-based authorization middleware',
+      'PostgreSQL database modeled with Prisma ORM for relational workflows',
+      'Secure authentication workflows for Admin, Doctor, and Patient roles',
     ],
     features: [
-      'Doctor & patient management',
-      'Appointment scheduling',
-      'Queue management',
-      'Analytics dashboard',
-      'Session authentication',
-      'Reusable dashboard UI',
+      'Admin, Doctor & Patient workflows',
+      'Doctor management & availability',
+      'Patient registration & booking',
+      'Live queue management',
+      'Role-based authentication & authorization',
+      'TanStack Query caching & state management',
     ],
-    stack: ['React', 'TypeScript', 'Node.js', 'Express.js', 'PostgreSQL', 'TanStack Query'],
-    demo: '',
+    stack: ['React', 'TypeScript', 'Node.js', 'Express.js', 'PostgreSQL', 'Prisma', 'TanStack Query'],
+    demo: 'https://clinicflow2-0.vercel.app',
     github: 'https://github.com/Kavi-Sharma08/clinicflow2.0',
-    highlight: 'Reusable architecture · REST APIs · Scalable dashboard · Queue management',
+    highlight: 'Full-stack · Role-based access · REST APIs · Prisma ORM · Queue management',
     accent: '#8b8bf8',
     mock: 'clinic',
   },
   {
-    id: 'justshare',
-    name: 'JustShare',
-    category: 'Product · Marketplace',
-    tagline: 'A campus rental marketplace with real-time messaging.',
+    id: 'billgst',
+    name: 'BillGST',
+    category: 'Local-First · FinTech',
+    tagline: 'A local-first GST invoicing application for Indian businesses.',
     description:
-      'A rental marketplace that lets students list and rent items on campus — with JWT authentication, Cloudinary media and WebSocket real-time messaging.',
+      'Built a local-first GST invoicing application for Indian businesses to create professional invoices, manage customers and products/services, calculate GST, and generate downloadable PDF invoices. Implemented customer, product/service, business profile, and invoice management with persistent local storage using IndexedDB and Dexie.js. Developed invoice workflows including GSTIN, HSN/SAC, CGST, SGST, IGST, invoice numbering, tax calculations, invoice totals, PDF generation, and local backup/restore.',
     problem:
-      'On campus, useful items sit unused while others need them. Existing marketplaces ignore the trust and immediacy of a real campus community.',
+      'Indian small businesses, freelancers, and service providers often struggle with cumbersome or subscription-heavy invoicing software when they need a fast, private, and compliant way to generate GST invoices.',
     solution:
-      'A peer-to-peer marketplace with verified users, rich listings, and instant real-time conversations between buyers and sellers.',
+      'A local-first invoicing app that operates directly in the browser with persistent offline storage, instant GST calculations (CGST, SGST, IGST), and downloadable PDF invoices.',
     challenges: [
-      'JWT authentication across client and server',
-      'Real-time messaging without message loss',
-      'Cloudinary media pipeline for listings',
-      'State management for a fast, live UI',
+      'Managing client-side persistent storage and reactive schemas with IndexedDB and Dexie.js',
+      'Accurate tax calculation workflows supporting GSTIN, HSN/SAC codes, CGST, SGST, and IGST',
+      'Client-side dynamic invoice PDF layout and generation using jsPDF',
+      'Seamless local backup and restore mechanisms for business data',
     ],
     architecture: [
-      'React + Redux frontend',
-      'JWT-secured Express API',
-      'MongoDB for users, listings and messages',
-      'WebSocket server for real-time chat',
-      'Cloudinary for image storage',
+      'React and Vite frontend styled with Tailwind CSS for high responsiveness',
+      'Zustand for lightweight and predictable application state management',
+      'IndexedDB persistence layer accessed through Dexie.js for offline reliability',
+      'jsPDF generation engine for formatting and exporting official tax invoices',
     ],
     features: [
-      'JWT authentication',
-      'Cloudinary media uploads',
-      'WebSockets real-time messaging',
-      'Listing creation & search',
-      'Conversation threads',
+      'Professional GST invoice generation',
+      'Customer & product/service management',
+      'Business profile setup',
+      'Automated CGST, SGST & IGST tax calculations',
+      'HSN/SAC & GSTIN compliance',
+      'Downloadable PDF invoices via jsPDF',
+      'IndexedDB storage & local backup/restore',
     ],
-    stack: ['React', 'Node.js', 'Express', 'MongoDB', 'WebSockets', 'JWT', 'Cloudinary'],
-    demo: '',
-    github: 'https://github.com/Kavi-Sharma08/Rent-Project-2',
-    highlight: 'JWT auth · WebSockets · Real-time messaging · Cloudinary',
-    accent: '#7f7ff0',
-    mock: 'rent',
+    stack: ['React', 'JavaScript', 'Vite', 'Tailwind CSS', 'IndexedDB', 'Dexie.js', 'Zustand', 'jsPDF'],
+    demo: 'https://gst-invoice-brown.vercel.app/',
+    github: '',
+    highlight: 'Local-first · Dexie.js & IndexedDB · GST tax calculations · jsPDF export',
+    accent: '#38bdf8',
+    mock: 'billgst',
   },
 ]
 
@@ -353,41 +341,30 @@ export const experience = [
 export const achievements = [
   {
     icon: 'zap',
-    value: '320+',
-    label: 'LeetCode problems',
-    note: 'Data structures, algorithms and clean problem-solving discipline.',
+    value: '350+',
+    label: 'Coding Problems',
+    sublabel: 'LeetCode',
+    note: 'Data structures, algorithms and algorithmic problem-solving practice on LeetCode.',
     featured: true,
   },
   {
     icon: 'layers',
-    value: '9.1',
-    label: 'CGPA',
-    note: 'Academic discipline meets engineering curiosity.',
-  },
-  {
-    icon: 'users',
-    value: 'Tech Team',
-    label: 'Namespace Society',
-    note: 'Senior member building the developer community.',
-  },
-  {
-    icon: 'sparkles',
-    value: 'NSS',
-    label: 'Social Impact',
-    note: 'Community initiatives, content and volunteering.',
+    value: '9.1 GPA',
+    label: 'B.Tech Information Technology',
+    sublabel: 'Academic Foundation',
+    note: 'Consistent academic discipline and strong fundamentals in Information Technology.',
+    featured: false,
   },
 ]
 
 export const githubData = {
   url: 'https://github.com/Kavi-Sharma08',
   pinned: [
-    { name: 'ClinicFlow', desc: 'SaaS clinic management platform', lang: 'TypeScript', color: '#8b8bf8', url: 'https://github.com/Kavi-Sharma08' },
-    { name: 'JustShare', desc: 'Campus rental marketplace', lang: 'JavaScript', color: '#a9a9ff', url: 'https://github.com/Kavi-Sharma08' },
+    { name: 'ClinicFlow', desc: 'Full-stack clinic management platform', lang: 'TypeScript', color: '#8b8bf8', url: 'https://github.com/Kavi-Sharma08/clinicflow2.0' },
   ],
   commits: [
-    { repo: 'ClinicFlow', msg: 'feat: real-time queue management with session auth', hash: '3f8a12d', branch: 'main', date: 'Jul 2026' },
-    { repo: 'ClinicFlow', msg: 'feat: analytics dashboard with appointment insights', hash: 'a17f33b', branch: 'main', date: 'Jun 2026' },
-    { repo: 'JustShare', msg: 'feat: real-time messaging with WebSockets', hash: 'c42d01f', branch: 'main', date: 'Jan 2026' },
+    { repo: 'ClinicFlow', msg: 'feat: live queue management with session auth', hash: '3f8a12d', branch: 'main', date: 'Jul 2026' },
+    { repo: 'ClinicFlow', msg: 'feat: role-based access control and appointments', hash: 'a17f33b', branch: 'main', date: 'Jun 2026' },
   ],
 }
 

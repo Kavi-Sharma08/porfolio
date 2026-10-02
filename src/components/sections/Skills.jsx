@@ -16,7 +16,7 @@ export default function Skills() {
         <SectionHeading
           index="03"
           eyebrow="The stack"
-          title="Tools that ship products."
+          title="Tools that ship projects."
           description="A deliberately small, deeply-used toolkit. Hover the galaxy to explore — or read the categories below."
           align="center"
         />

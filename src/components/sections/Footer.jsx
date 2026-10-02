@@ -11,7 +11,7 @@ export default function Footer() {
               Kavi<span className="text-accent">.</span>
             </a>
             <p className="mt-2 max-w-xs text-sm text-white/40">
-              Full Stack Software Engineer — building products people actually use.
+              Full Stack Software Engineer — building scalable web applications and software projects.
             </p>
           </div>
           <nav aria-label="Footer" className="flex flex-wrap gap-x-6 gap-y-2">
